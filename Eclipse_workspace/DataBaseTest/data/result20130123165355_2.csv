@@ -1,0 +1,7 @@
+Thread_ID,BeginTime(Second),EndTime(Second),CostTime(Second),CPU Utilization Before the Query,CPU Utilization After the Query,Memory Utilization Before the Query,Memory Utilization After the Query,Sql Or The Number of Sql(1-22)
+THREAD_8,1.358931193E9,1.35893123E9,37.0,5.0,27.0,26.0,27.0,1
+THREAD_7,1.358931193E9,1.358931211E9,18.0,5.0,100.0,26.0,27.0,2
+Statistics for Each Query:
+Sql_Num,ExectorCount,MinExecTime,MaxExecTime,AverageExecTime
+2,1,18,18,18
+1,1,37,37,37

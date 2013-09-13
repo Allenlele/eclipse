@@ -1,0 +1,3 @@
+#Thu Feb 21 08:54:41 CST 2013
+eclipse.preferences.version=1
+org.eclipse.core.variables.valueVariables=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<valueVariables>\r\n<valueVariable description\="The NC_HOME location" name\="FIELD_NC_HOME" readOnly\="false" value\="c\:\\nc_home"/>\r\n<valueVariable description\="The CLIENT_Port" name\="FIELD_CLINET_PORT" readOnly\="false" value\="80"/>\r\n<valueVariable description\="The CLIENT_IPAdreess" name\="FIELD_CLINET_IP" readOnly\="false" value\="127.0.0.1"/>\r\n</valueVariables>\r\n

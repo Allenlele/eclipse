@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="31" started-at="2013-08-30T06:51:10Z" finished-at="2013-08-30T06:51:10Z">
+    <groups>
+    </groups>
+    <test name="Test1" duration-ms="16" started-at="2013-08-30T06:51:10Z" finished-at="2013-08-30T06:51:10Z">
+      <class name="org.test.Son1Test">
+        <test-method status="PASS" signature="son1Test2()[pri:0, instance:org.test.Son1Test@152544e]" name="son1Test2" duration-ms="16" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- son1Test2 -->
+        <test-method status="PASS" signature="everyTest()[pri:0, instance:org.test.Son1Test@152544e]" name="everyTest" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest -->
+        <test-method status="PASS" signature="everyTest1()[pri:0, instance:org.test.Son1Test@152544e]" name="everyTest1" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest1 -->
+        <test-method status="PASS" signature="son1Test()[pri:0, instance:org.test.Son1Test@152544e]" name="son1Test" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- son1Test -->
+        <test-method status="PASS" signature="everyTest3()[pri:0, instance:org.test.Son1Test@152544e]" name="everyTest3" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest3 -->
+        <test-method status="PASS" signature="everyTest3()[pri:0, instance:org.test.Son1Test@152544e]" name="everyTest3" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest3 -->
+        <test-method status="PASS" signature="everyTest()[pri:0, instance:org.test.Son1Test@152544e]" name="everyTest" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest -->
+      </class> <!-- org.test.Son1Test -->
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="15" started-at="2013-08-30T06:51:10Z" finished-at="2013-08-30T06:51:10Z">
+      <class name="org.test.Son2Test">
+        <test-method status="PASS" signature="baseTest()[pri:0, instance:org.test.Son2Test@b1b4c3]" name="baseTest" is-config="true" duration-ms="16" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseTest -->
+        <test-method status="PASS" signature="everyTest1()[pri:0, instance:org.test.Son2Test@b1b4c3]" name="everyTest1" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest1 -->
+        <test-method status="PASS" signature="son2Test2()[pri:0, instance:org.test.Son2Test@b1b4c3]" name="son2Test2" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- son2Test2 -->
+        <test-method status="PASS" signature="everyTest()[pri:0, instance:org.test.Son2Test@b1b4c3]" name="everyTest" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest -->
+        <test-method status="PASS" signature="everyTest()[pri:0, instance:org.test.Son2Test@b1b4c3]" name="everyTest" is-config="true" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- everyTest -->
+        <test-method status="PASS" signature="son2Test()[pri:0, instance:org.test.Son2Test@b1b4c3]" name="son2Test" duration-ms="0" started-at="2013-08-30T14:51:10Z" finished-at="2013-08-30T14:51:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- son2Test -->
+      </class> <!-- org.test.Son2Test -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Suite -->
+</testng-results>
