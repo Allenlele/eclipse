@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         <objectContribution
+        adaptable="true"
+        id="com.yonyou.uap.springxml2java.xml2java"
+        nameFilter="*.xml"
+        objectClass="org.eclipse.core.resources.IFile">
+     <action
+           class="com.yonyou.uap.springxml2java.Springxml2java"
+           id="com.yonyou.uap.springxml2java.action.springxml2java"
+           label="SpringXml to Java">
+     </action>
+  </objectContribution>
+   </extension>
+
+</plugin>

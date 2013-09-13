@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: com.yonyou.uap.studio.lic;singleton:=true
+Bundle-Version: 6.3.0
+Bundle-Activator: com.yonyou.uap.studio.lic.Activator
+Bundle-Vendor: %Bundle-Vendor
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/bcprov-jdk15-132.jar,
+ lib/ncsec.jar,
+ .
+Export-Package: com.yonyou.uap.studio.lic,
+ com.yonyou.uap.studio.lic.core,
+ nc.lic.model
+Bundle-Localization: plugin
+Import-Package: org.osgi.framework

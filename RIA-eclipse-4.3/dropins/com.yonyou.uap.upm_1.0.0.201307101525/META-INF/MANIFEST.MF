@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.co
+ re.resources;bundle-version="3.7.101",org.eclipse.ui.workbench.texted
+ itor;bundle-version="3.7.0",org.eclipse.jface.text;bundle-version="3.
+ 7.2",org.eclipse.ui.editors;bundle-version="3.7.0",org.eclipse.core.f
+ ilesystem;bundle-version="1.3.100",org.eclipse.ui.ide;bundle-version=
+ "3.7.0",org.eclipse.jdt;bundle-version="3.7.2",org.eclipse.jdt.ui;bun
+ dle-version="3.7.2",org.eclipse.jdt.core;bundle-version="3.7.3",org.e
+ clipse.core.variables;bundle-version="3.2.500"
+Bundle-Vendor: YONYOU
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/XmlSchema-1.4.2.jar,.,lib/lucene-core-3.0.2.jar
+Bundle-Version: 1.0.0.201307101525
+Bundle-Name: Upm
+Bundle-Activator: com.yonyou.uap.upm.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.yonyou.uap.upm;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

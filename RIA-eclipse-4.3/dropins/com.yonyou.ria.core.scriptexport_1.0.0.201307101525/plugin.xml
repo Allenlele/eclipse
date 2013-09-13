@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.yonyou.ria.core.scriptexport.objectContribution1"
+            nameFilter="items.xml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="com.yonyou.ria.core.scriptexport.ui.actions.ExportComponentInitDataAction"
+               enablesFor="1"
+               id="com.yonyou.ria.core.scriptexport.action1"
+               label="导出预置脚本"
+               menubarPath="additions"
+               tooltip="使用items.xml文件导出预置数据脚本">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

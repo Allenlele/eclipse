@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.yonyou.uat.plugin.uattools"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               id="com.yonyou.uat.plugin.uattoolsmenu"
+               label="UAPUNIT"
+               path="additions">
+            <separator
+                  name="group0">
+            </separator>
+            <separator
+                  name="group1">
+            </separator>
+            <separator
+                  name="group2">
+            </separator>
+         </menu>
+         <action
+               label="Generate Package Test"
+               class="com.yonyou.uat.plugin.popup.resource.actions.GeneratePackageTestAction"
+               menubarPath="com.yonyou.uat.plugin.uattoolsmenu/group0"
+               enablesFor="*"
+               id="com.yonyou.uat.plugin.GeneratePackageTestAction">
+         </action>
+         <action
+               class="com.yonyou.uat.plugin.popup.resource.actions.GenerateClassTestAction"
+               id="com.yonyou.uat.plugin.GenerateClassTestAction"
+               label="Generate Class Test"
+               menubarPath="com.yonyou.uat.plugin.uattoolsmenu/group0">
+         </action>
+         <action
+               class="com.yonyou.uat.plugin.popup.resource.actions.InitTestEnvmtAction"
+               enablesFor="*"
+               id="com.yonyou.uat.plugin.InitTestEnvmtAction"
+               label="Initialize Test Environment"
+               menubarPath="com.yonyou.uat.plugin.uattoolsmenu/group2">
+         </action>
+         <action
+               class="com.yonyou.uat.plugin.popup.resource.actions.InitWorkspaceTestEnvmtAction"
+               enablesFor="*"
+               id="com.yonyou.uat.plugin.InitWorkspaceTestEnvmtAction"
+               label="Initialize Workspace Test Environment"
+               menubarPath="com.yonyou.uat.plugin.uattoolsmenu/group2">
+         </action>
+      </objectContribution>
+      <viewerContribution
+            id="com.yonyou.uat.plugin.uattools.editor"
+            targetID="#CompilationUnitEditorContext">
+         <action
+               class="com.yonyou.uat.plugin.popup.editor.actions.AddObject2XmlAction"
+               id="com.yonyou.uat.plugin.AddObject2XmlAction"
+               label="Add Object To SpringXML"
+               menubarPath="com.yonyou.uat.plugin.uattoolsmenu/group1">
+         </action>
+      </viewerContribution>
+   </extension>
+   <extension
+         point="org.eclipse.jdt.core.classpathVariableInitializer">
+          <classpathVariableInitializer
+            variable="UAPUnit_HOME"
+            class="com.yonyou.uat.plugin.classpath.UAPUnitHomeInitializer">
+      </classpathVariableInitializer>
+   </extension>
+   <extension
+         point="org.eclipse.jdt.ui.classpathContainerPage">
+          <classpathContainerPage
+          class="com.yonyou.uat.plugin.classpath.UAPUnitContainerWizardPage"
+          id="com.yonyou.UAPUnit_CONTAINER"
+          name="UAPUnit">
+    </classpathContainerPage>
+   </extension>
+   <extension
+         point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+            class="com.yonyou.uat.plugin.classpath.UAPUnitContainerInitializer"
+            id="com.yonyou.UAPUnit_CONTAINER"/>
+  </extension>
+
+</plugin>

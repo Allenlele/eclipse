@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension point="org.eclipse.ui.editors">
+		<editor class="nc.uap.mde.editor.basic.BasicXMLEditor" icon="icons/editor_icon.gif"
+			default="true" contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+			name="UPM Editor" id="nc.uap.mde.editor.basic" extensions="upm">
+		</editor>
+	</extension>
+	<extension point="org.eclipse.ui.bindings">
+		<key commandId="nc.uap.mde.editor.XmlFormat" contextId="org.eclipse.ui.upmEditorScope"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" sequence="CTRL+SHIFT+F">
+		</key>
+		 <key
+        commandId="nc.uap.mde.editor.OpenDeclaration"
+        contextId="org.eclipse.ui.upmEditorScope"
+        schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+        sequence="F3">
+  </key>
+  <key
+        commandId="nc.uap.mde.view.SearchUPM"
+        contextId="org.eclipse.ui.contexts.window"
+        schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+        sequence="CTRL+F5">
+  </key>
+	</extension>
+
+		<extension point="org.eclipse.ui.commands">
+		<command defaultHandler="nc.uap.mde.editor.basic.keyListeners.FormatXMLHandler"
+			id="nc.uap.mde.editor.XmlFormat" name="XML Format">
+		</command>
+		<command defaultHandler="nc.uap.mde.editor.basic.keyListeners.OpenDeclarationHandler"
+			id="nc.uap.mde.editor.OpenDeclaration" name="Open Declaration">
+		</command>
+  <command
+        defaultHandler="nc.uap.mde.views.SearchUpmHandler"
+        id="nc.uap.mde.view.SearchUPM"
+        name="Search Upm Resource">
+  </command>
+	</extension>
+	<extension point="org.eclipse.ui.contexts">
+		<context id="org.eclipse.ui.upmEditorScope" name="org.eclipse.ui.upmEditorScope"
+			parentId="org.eclipse.ui.textEditorScope">
+		</context>
+	</extension>
+ <extension
+       point="org.eclipse.ui.views">
+    <category
+          id="nc.uap.mde"
+          name="Upm View">
+    </category>
+    <view
+          category="nc.uap.mde"
+          class="nc.uap.mde.views.UpmResourceView"
+          icon="icons/editor_icon.gif"
+          id="nc.uap.mde.views.UpmResourceView"
+          name="Upm Resources View">
+    </view>
+ </extension>
+
+ <extension point="org.eclipse.ui.newWizards">
+		<category name="UPM File" id="com.yonyou.uap.upm.newWizards" />
+		<wizard category="com.yonyou.uap.upm.newWizards" class="nc.uap.mde.editor.UpmNewWizard"
+			icon="icons/editor_icon.gif" id="nc.uap.mde.editor.UpmNewWizard"
+			name="Upm file">
+		</wizard>
+	</extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+       <viewerContribution
+			id="nc.uap.mde.menuTools.xmleditor"
+			targetID="nc.uap.mde.editor.basic.context">
+			<action class="nc.uap.mde.editor.basic.FormatAction"
+				definitionId="nc.uap.mde.editor.XmlFormat" id="nc.uap.mde.editor.basic.FormatAction"
+				label="Format" menubarPath="upmAdditions">
+			</action>
+			<action class="nc.uap.mde.editor.basic.actions.OpenElementAction"
+				definitionId="nc.uap.mde.editor.OpenDeclaration" id="nc.uap.mde.editor.basic.actions.OpenElementAction"
+				label="Open Declaration" menubarPath="upmAdditions">
+			</action>
+   <action
+         class="nc.uap.mde.views.SearchAction"
+         definitionId="nc.uap.mde.view.SearchUPM"
+         id="nc.uap.mde.view.searchAction"
+         label="Search Upm Resource"
+         menubarPath="upmAdditions">
+   </action>
+   <action
+         class="nc.uap.mde.editor.basic.actions.NewComponentAction"
+         definitionId="nc.uap.mde.editor.NewComponent"
+         id="nc.uap.mde.editor.basic.NewComponentAction"
+         label="New UAP Component"
+         menubarPath="upmAdditions">
+   </action>
+   <action
+         class="nc.uap.mde.editor.basic.actions.NewAspectAction"
+         definitionId="nc.uap.mde.editor.NewAspect"
+         id="nc.uap.mde.editor.basic.NewAspectAction"
+         label="New UAP Aop Aspect"
+         menubarPath="upmAdditions">
+   </action>
+   <action
+         class="nc.uap.mde.editor.basic.actions.NewWSComponentAction"
+         definitionId="nc.uap.mde.editor.NewWSComponent"
+         id="nc.uap.mde.editor.basic.NewWSComponentAction"
+         label="New UAP WebService Component"
+         menubarPath="upmAdditions">
+   </action>
+		</viewerContribution>
+ </extension>
+</plugin>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="com.yonyou.ria.g2.launching.launcher.MiddlewareLaunchShortcut"
+            icon="images/uap_application.gif"
+            id="com.yonyou.ria.g2.launching.shortcut1"
+            label="&amp;UAP中间件服务器"
+            modes="run, debug, profile">
+         <contextualLaunch>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+               <iterate>
+							<and>
+								<test property="org.eclipse.debug.ui.projectNature" value="com.yonyou.ria.g2.rianature">
+								</test>
+								<adapt type="org.eclipse.jdt.core.IJavaElement">
+									<test property="org.eclipse.jdt.core.isInJavaProject">
+									</test>
+								</adapt>
+							</and>
+						</iterate>
+             </with>
+           </enablement>
+  		 </contextualLaunch>
+      </shortcut>
+      <shortcut
+            class="com.yonyou.ria.g2.launching.launcher.ClientLaunchShortcut"
+            icon="images/uap_application.gif"
+            id="com.yonyou.ria.g2.launching.shortcut2"
+            label="&amp;UAP客户端"
+            modes="run, debug, profile">
+            <contextualLaunch>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+               <iterate>
+							<and>
+								<test property="org.eclipse.debug.ui.projectNature" value="com.yonyou.ria.g2.rianature">
+								</test>
+								<adapt type="org.eclipse.jdt.core.IJavaElement">
+									<test property="org.eclipse.jdt.core.isInJavaProject">
+									</test>
+								</adapt>
+							</and>
+						</iterate>
+             </with>
+           </enablement>
+            </contextualLaunch>
+      </shortcut>
+      <shortcut class="com.yonyou.ria.g2.launching.launcher.RIAJunitLaunchShortcut"
+			helpContextId="org.eclipse.jdt.junit.launch_shortcut" icon="images/uap_junit.gif"
+			id="nc.uap.mde.junit.junitShortcut" label="UAP Application Junit Test"
+			modes="run, debug">
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+       <and>
+          <test
+                property="org.eclipse.debug.ui.projectNature"
+                value="com.yonyou.ria.g2.rianature">
+          </test>
+          <adapt
+                type="org.eclipse.jdt.core.IJavaElement">
+             <test
+                   property="org.eclipse.jdt.core.isInJavaProject">
+             </test>
+             <test
+                   forcePluginActivation="true"
+                   property="org.eclipse.jdt.junit.canLaunchAsJUnit">
+             </test>
+          </adapt>
+       </and>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="org.eclipse.jdt.junit.launchconfig">
+			</configurationType>
+		</shortcut>
+		<shortcut
+			class="com.yonyou.ria.g2.launching.launcher.RIAJavaAppletLaunchShortcut" helpContextId="org.eclipse.jdt.debug.ui.shortcut_java_applet"
+			icon="images/uap_applet.gif" id="nc.uap.mde.junit.javaappletShortcut"
+			label="UAP A&amp;pplet Application" modes="run, debug">
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<and>
+								<adapt type="org.eclipse.jdt.core.IJavaElement">
+									<test property="org.eclipse.jdt.core.isInJavaProject">
+									</test>
+								</adapt>
+								<or>
+									<test args="java.applet.Applet" property="org.eclipse.jdt.launching.extendsClass">
+									</test>
+									<test property="org.eclipse.jdt.launching.isContainer">
+									</test>
+									<test property="org.eclipse.jdt.launching.isPackageFragment">
+									</test>
+									<test property="org.eclipse.jdt.launching.isPackageFragmentRoot">
+									</test>
+								</or>
+								<test property="org.eclipse.debug.ui.projectNature" value="disable-com.yonyou.ria.g2.rianature">
+								</test>
+							</and>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="org.eclipse.jdt.launching.javaApplet">
+			</configurationType>
+		</shortcut>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType
+			delegate="com.yonyou.ria.g2.launching.launcher.RIAApplicationLaunchDelegate" id="com.yonyou.ria.g2.launcher.application"
+			migrationDelegate="org.eclipse.jdt.internal.launching.JavaMigrationDelegate"
+			modes="run, debug" name="UAP应用"
+			sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+			sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer" />
+  <launchConfigurationType
+        delegate="com.yonyou.ria.g2.launching.launcher.RIAJunitLaunchDelegate"
+         id="com.yonyou.ria.g2.launcher.junit"
+        migrationDelegate="org.eclipse.jdt.internal.launching.JavaMigrationDelegate"
+        modes="run, debug"
+        name="UAP单元测试应用"
+        sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+        sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+  </launchConfigurationType>
+  <launchConfigurationType
+        delegate="com.yonyou.ria.g2.launching.launcher.RIAJavaAppletLaunchDelegate"
+        id="com.yonyou.ria.g2.launcher.applet"
+        migrationDelegate="org.eclipse.jdt.internal.launching.JavaMigrationDelegate"
+        modes="run, debug"
+        name="UAP Applet 应用"
+        sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+        sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+  </launchConfigurationType>		
+	</extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="com.yonyou.ria.g2.launching.launcher.RIAConfigurationTabGroup"
+            id="com.yonyou.ria.g2.launching.launchConfigurationTabGroup1"
+            type="com.yonyou.ria.g2.launcher.application">
+      </launchConfigurationTabGroup>
+      <launchConfigurationTabGroup
+            class="com.yonyou.ria.g2.launching.launcher.RIAJunitConfigurationTabGroup"
+            helpContextId="org.eclipse.jdt.junit.junit_tab_group"
+            id="com.yonyou.ria.g2.launching.launchConfigurationTabGroup2"
+            type="com.yonyou.ria.g2.launcher.junit">
+      </launchConfigurationTabGroup>
+      <launchConfigurationTabGroup
+            class="com.yonyou.ria.g2.launching.launcher.RIAJavaAppletConfigurationTabGroup"
+            helpContextId="org.eclipse.jdt.debug.ui.launchConfigHelpContext.java_applet"
+            id="com.yonyou.ria.g2.launching.launchConfigurationTabGroup3"
+            type="com.yonyou.ria.g2.launcher.applet">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.jdt.launching.classpathProviders">
+      <classpathProvider
+            class="com.yonyou.ria.g2.launching.classpath.ClientClasspathProvider"
+            id="com.yonyou.ria.g2.launching.classpath.ClientClasspathProvider">
+      </classpathProvider>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="com.yonyou.ria.g2.launcher.application"
+            icon="images/uap_application.gif"
+            id="com.yonyou.ria.g2.launching.launchConfigurationTypeImage1">
+      </launchConfigurationTypeImage>
+      <launchConfigurationTypeImage
+            configTypeID="com.yonyou.ria.g2.launcher.junit"
+            icon="images/uap_junit.gif"
+            id="com.yonyou.ria.g2.launching.launchConfigurationTypeImage2">
+      </launchConfigurationTypeImage>
+      <launchConfigurationTypeImage
+            configTypeID="com.yonyou.ria.g2.launcher.applet"
+            icon="images/uap_applet.gif"
+            id="com.yonyou.ria.g2.launching.launchConfigurationTypeImage3">
+      </launchConfigurationTypeImage>
+   </extension>
+
+</plugin>

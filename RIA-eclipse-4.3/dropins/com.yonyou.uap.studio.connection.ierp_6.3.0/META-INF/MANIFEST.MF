@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UAP下IERP数据源
+Bundle-SymbolicName: com.yonyou.uap.studio.connection.ierp;singleton:=true
+Bundle-Version: 6.3.0
+Bundle-Activator: com.yonyou.uap.studio.connection.ierp.Activator
+Bundle-Vendor: YONYOUs
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.yonyou.uap.studio.connection;bundle-version="6.3.0",
+ nc.uap.studio.common;bundle-version="6.3.1"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy

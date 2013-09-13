@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+	attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="description" />
+	<xs:element name="interface" />
+	<xs:element name="implementation" />
+	<xs:element name="ref" />
+	<xs:element name="value" />
+	<xs:simpleType name="txType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NONE" />
+			<xs:enumeration value="CMT" />
+			<xs:enumeration value="BMT" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="bean">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="construct" minOccurs="0" />
+				<xs:element ref="property" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="class" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="extension">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any processContents="lax"  minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="props">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="prop" minOccurs="0">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="key" type="xs:string" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="valueGroup" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="set">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="valueGroup" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="map">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="valueGroup" />
+						</xs:sequence>
+						<xs:attribute name="key" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="valueGroup">
+		<xs:choice>
+			<xs:element ref="ref" />
+			<xs:element ref="value" />
+			<xs:element ref="props" />
+			<xs:element ref="list" />
+			<xs:element ref="map" />
+			<xs:element ref="set" />
+			<xs:element ref="bean" />
+		</xs:choice>
+	</xs:group>
+	<xs:element name="factory-method">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="provider">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element ref="ref" />
+							<xs:element ref="value" />
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="valueGroup" minOccurs="0" />
+						</xs:sequence>
+						<xs:attribute name="type" use="optional" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="method" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="construct">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="valueGroup" />
+						</xs:sequence>
+						<xs:attribute name="type" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="factoryGroup">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="implementation" />
+				<xs:element ref="construct" minOccurs="0" />
+			</xs:sequence>
+			<xs:element ref="factory-method" />
+		</xs:choice>
+	</xs:group>
+	<xs:element name="property">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="valueGroup" />
+			</xs:sequence>
+			<xs:attribute name="name" />
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="pubComponentType">
+		<xs:sequence>
+			<xs:element ref="interface" minOccurs="0" maxOccurs="unbounded" />
+			<xs:group ref="factoryGroup" minOccurs="0" />
+			<xs:element ref="property" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="extension" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="singleton" type="xs:boolean" default="true" />
+		<xs:attribute name="priority" type="xs:integer" default="0" />
+		<xs:attribute name="remote" type="xs:boolean" default="false" />
+		<xs:attribute name="active" type="xs:boolean" default="false" />
+		<xs:attribute name="name" type="xs:string" use="optional" />
+		<xs:attribute name="cluster" type="xs:string" use="optional" />
+		<xs:attribute name="tx" type="txType" default="NONE" />
+		<xs:attribute name="supportAlias" use="optional" default="false"
+			type="xs:boolean" />
+		<xs:attribute name="accessProtected" use="optional" default="false"
+			type="xs:boolean" />
+	</xs:complexType>
+
+	<xs:complexType name="privateComponentType">
+		<xs:sequence>
+			<xs:element ref="description" minOccurs="0" />
+			<xs:element ref="interface" minOccurs="0" />
+			<xs:group ref="factoryGroup" />
+			<xs:element ref="property" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="extension" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="optional" />
+		<xs:attribute name="singleton" type="xs:boolean" default="true" />
+		<xs:attribute name="priority" type="xs:integer" default="0" />
+		<xs:attribute name="cluster" type="xs:string" use="optional" />
+		<xs:attribute name="supportAlias" type="xs:boolean" use="optional"
+			default="false" />
+		<xs:attribute name="accessProtected" type="xs:boolean" use="optional"
+			default="false" />
+	</xs:complexType>
+
+	<xs:element name="public">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="component" minOccurs="0" maxOccurs="unbounded"
+					type="pubComponentType">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<xs:element name="private">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="component" minOccurs="0" maxOccurs="unbounded"
+					type="privateComponentType">
+
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="aops">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="aspect" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="component" minOccurs="0" maxOccurs="unbounded" />
+						</xs:sequence>
+						<xs:attribute name="class" type="xs:string" />
+						<xs:attribute name="component" use="optional" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="module">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0" />
+				<xs:element ref="public" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="private" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="aops" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+			<xs:attribute name="priority" type="xs:integer" use="optional" default="0" />
+			<xs:attribute name="framework" type="xs:boolean" use="optional" default="true"/>
+			<xs:attribute name="name" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

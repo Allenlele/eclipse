@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: 通用的数据库连接池实现
+Bundle-SymbolicName: com.yonyou.uap.studio.connection
+Bundle-Version: 6.3.0
+Bundle-Activator: com.yonyou.uap.studio.connection.ConnectionPlugin
+Bundle-Vendor: YONYOU
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: com.yonyou.uap.studio.connection,
+ com.yonyou.uap.studio.connection.exception,
+ com.yonyou.uap.studio.connection.model,
+ com.yonyou.uap.studio.connection.provider,
+ com.yonyou.uap.studio.connection.rsp
+Bundle-ClassPath: .

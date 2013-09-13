@@ -1,0 +1,52 @@
+
+==============================================================================
+1)补丁基本信息
+==============================================================================
+
+	补丁名称 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").basicData.name}
+	补丁编号 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").basicData.id}
+	产品版本 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").basicData.version}
+	补丁修改模块 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").basicData.modifiedModules}
+	补丁依赖信息 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").environmentData.depdencies}
+	适用的中间件平台 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").environmentData.middleware}
+	适用的操作系统平台 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").environmentData.operationSystem}
+	适用的数据库平台 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").environmentData.database}
+	补丁创建时间 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").basicData.createdTime}
+	是否需要部署 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").environmentData.needDeploy}
+	是否需要重新生成客户端Applet Jar包 - ${context.get("com.yonyou.uapstudio.patch.patchinfo").environmentData.needRegenClientJar}
+
+==============================================================================
+2)补丁安装步骤说明
+==============================================================================
+
+
+	补丁安装前置准备工作(比如数据备份)
+	======================================================================
+	${context.get("com.yonyou.uapstudio.patch.patchinfo").setupData.preTask}
+
+
+	补丁安装
+	======================================================================
+	${context.get("com.yonyou.uapstudio.patch.patchinfo").setupData.setupTask}
+
+
+	补丁安装后置工作
+	======================================================================
+	${context.get("com.yonyou.uapstudio.patch.patchinfo").setupData.postTask}
+
+
+	补丁安装成功的验证工作
+	======================================================================
+	${context.get("com.yonyou.uapstudio.patch.patchinfo").setupData.validateTask}
+
+
+	其它信息
+	======================================================================
+	${context.get("com.yonyou.uapstudio.patch.patchinfo").setupData.otherInfo}
+
+==============================================================================
+3)补丁修复bug列表说明
+==============================================================================
+#foreach($bug in ${context.get("com.yonyou.uapstudio.patch.patchinfo").bugData.bugs})
+	$bug.get(0) - $bug.get(1)
+#end

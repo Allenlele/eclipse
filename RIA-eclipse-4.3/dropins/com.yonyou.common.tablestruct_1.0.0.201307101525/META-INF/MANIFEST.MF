@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: com.yonyou.common.tablestruct,com.yonyou.common.tables
+ truct.model,com.yonyou.common.tablestruct.service,com.yonyou.common.t
+ ablestruct.util
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/log4j-1.2.15.jar,lib/xmlpull-1.1.3.1.jar,lib/xpp
+ 3_min-1.1.4c.jar,lib/xstream-1.4.2.jar,.
+Bundle-Name: Tablestruct
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,nc.uap.studio.
+ pub;bundle-version="6.3.0"
+Bundle-Vendor: YONYOU
+Bundle-Version: 1.0.0.201307101525
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.yonyou.common.tablestruct.Activator
+Bundle-SymbolicName: com.yonyou.common.tablestruct
+Import-Package: org.eclipse.core.internal.resources,org.eclipse.core.r
+ esources
+
+

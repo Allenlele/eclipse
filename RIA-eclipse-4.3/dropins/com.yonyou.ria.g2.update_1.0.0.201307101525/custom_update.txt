@@ -1,0 +1,15 @@
+# 此文件中以#号开头的内容、空行都将被忽略，UTF-8编码
+# 表达式为 左值 -> 右值，以"->"分隔
+# 左值变量：${PROJECT}代表项目根目录；${COMPONENT}代表组件目录；
+# 右值变量：${UAPHOME}代表UAP_HOME根目录；${MODULE}代表modules/对应module 目录
+# 右值占位符：${M}为模块编码；${COMPONENT}为组件编码
+${COMPONENT}/script -> ${COMPONENT}/script_temp
+${COMPONENT}/script_temp -> ${COMPONENT}/script/business/wizard_gen
+${COMPONENT}/config/initdata -> ${COMPONENT}/script/conf/initdata
+${COMPONENT}/config/pdm -> ${COMPONENT}/script/conf/pdm
+${COMPONENT}/ace -> ${COMPONENT}/designmodel/ace
+${COMPONENT}/coderule -> ${COMPONENT}/designmodel/coderule
+${COMPONENT}/funcmodel -> ${COMPONENT}/designmodel/funcmodel
+${COMPONENT}/systemplatebase -> ${COMPONENT}/designmodel/systemplatebase
+${COMPONENT}/templet -> ${COMPONENT}/designmodel/templet
+${COMPONENT}/platform -> ${COMPONENT}/designmodel/platform

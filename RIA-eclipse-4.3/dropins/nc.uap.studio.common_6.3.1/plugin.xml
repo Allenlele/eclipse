@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="propChangeListeners" name="%extension-point.name.propchange" schema="schema/nc.uap.studio.common.propChangeListeners.exsd"/>
+   <extension-point id="extClassLoaders" name="%extension-point.name" schema="schema/extClassLoaders.exsd"/>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            class="nc.uap.plugin.studio.ui.preference.MainPreferencePage"
+            id="nc.uap.studio.common.preferencePages.main"
+            name="%page.name.main">
+      </page>
+		<page
+        category="nc.uap.studio.common.preferencePages.main"
+        class="nc.uap.plugin.studio.ui.preference.DevelopmentPreferencePage"
+        id="nc.uap.studio.common.preferencePages.developement"
+        name="%page.name.development"/>
+	</extension>
+	<extension point="org.eclipse.core.variables.valueVariables">
+		<variable description="%variable.description" initialValue="testbill"
+			name="FIELD_EX_MODULES" />
+		<variable description="%variable.description.0" initialValue="127.0.0.1"
+			name="FIELD_CLINET_IP">
+		</variable>
+		<variable description="%variable.description.1" initialValue="80"
+			name="FIELD_CLINET_PORT">
+		</variable>
+	</extension>
+   <extension
+         point="nc.uap.studio.common.propChangeListeners">
+      <listener
+            class="nc.uap.plugin.studio.listener.impl.VariableListener">
+      </listener>
+      <listener
+            class="nc.uap.plugin.studio.classloader.pub.listener.ClassLoaderEnvPropChangeListener">
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.yonyou.common.core.ui.startup.EnvValidator">
+      </startup>
+   </extension>
+</plugin>

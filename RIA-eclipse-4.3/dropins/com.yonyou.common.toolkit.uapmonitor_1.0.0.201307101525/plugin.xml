@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension point="org.eclipse.ui.actionSets">
+		<actionSet id="com.yonyou.common.toolkit.actionset" label="UAP Launch Action Set"
+			visible="true">
+			<action
+         class="com.yonyou.common.toolkit.uapmonitor.ui.action.LaunchNCMonitorAction"
+         icon="icons/uapmonitor.png"
+         id="com.yonyou.common.toolkit.action.uapmonitor"
+         label="launch UAP Monitor"
+         toolbarPath="uaptools"
+         tooltip="%action.tooltip">
+			</action>
+		</actionSet>
+	</extension>
+</plugin>

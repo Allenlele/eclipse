@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: com.yonyou.uap.studio.lic.ui;singleton:=true
+Bundle-Version: 6.3.0
+Bundle-Activator: com.yonyou.uap.studio.lic.ui.Activator
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.yonyou.uap.studio.lic
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin
+Bundle-ActivationPolicy: lazy
+Export-Package: com.yonyou.uap.studio.lic.ui

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.co
+ re.resources;bundle-version="3.7.101",com.yonyou.ria.g2;bundle-versio
+ n="1.0.0",nc.uap.studio.pub;bundle-version="6.3.0",com.yonyou.uap.stu
+ dio.connection;bundle-version="6.3.0"
+Bundle-Vendor: YONYOU
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.201307101525
+Bundle-Name: Scriptexport
+Bundle-Activator: com.yonyou.ria.core.scriptexport.Activator
+Bundle-ManifestVersion: 2
+Import-Package: com.yonyou.common.tablestruct.model,com.yonyou.common.
+ tablestruct.service,com.yonyou.common.tablestruct.util
+Bundle-SymbolicName: com.yonyou.ria.core.scriptexport;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

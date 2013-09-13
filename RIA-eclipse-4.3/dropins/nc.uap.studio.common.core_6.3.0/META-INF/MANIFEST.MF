@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UAP-STUDIO Common Core Plug-in
+Bundle-SymbolicName: nc.uap.studio.common.core;singleton:=true
+Bundle-Version: 6.3.0
+Bundle-Activator: nc.uap.studio.common.core.CommonCoreActivator
+Bundle-Vendor: Yonyou Software CO.LTD.
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.osgi.util,
+ org.eclipse.ui,
+ org.osgi.framework
+Bundle-ClassPath: .
+Export-Package: nc.uap.studio.common.core,
+ nc.uap.studio.common.core.auth,
+ nc.uap.studio.common.core.developer,
+ nc.uap.studio.common.core.developer.vo
+Bundle-ActivationPolicy: lazy

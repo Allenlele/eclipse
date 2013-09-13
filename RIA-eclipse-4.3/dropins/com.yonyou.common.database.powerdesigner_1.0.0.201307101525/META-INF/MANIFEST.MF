@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: com.yonyou.common.database.powerdesigner,com.yonyou.co
+ mmon.database.powerdesigner.core,com.yonyou.common.database.powerdesi
+ gner.exception,com.yonyou.common.database.powerdesigner.impl,com.yony
+ ou.common.database.powerdesigner.itf,com.yonyou.common.database.power
+ designer.util
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,nc.uap.studio.
+ pub;bundle-version="6.3.0",nc.uap.studio.common.velocity;bundle-versi
+ on="6.3.0",nc.uap.studio.common;bundle-version="6.3.1"
+Bundle-Vendor: YONYOU
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.201307101525
+Bundle-Name: Powerdesigner
+Bundle-Activator: com.yonyou.common.database.powerdesigner.DBPowerDesi
+ gnerPlugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.yonyou.common.database.powerdesigner
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

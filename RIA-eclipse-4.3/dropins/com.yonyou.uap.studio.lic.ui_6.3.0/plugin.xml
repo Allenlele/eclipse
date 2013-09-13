@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.yonyou.uap.studio.help.command.license"
+            name="%command.licman.name">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.yonyou.uap.studio.lic.ui.handler.LicenseManageHandler"
+            commandId="com.yonyou.uap.studio.help.command.license">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:help?after=additions">
+         <separator
+               name="com.yonyou.uap.studio.help.menu.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="com.yonyou.uap.studio.help.command.license"
+               id="com.yonyou.uap.studio.help.menu.license"
+               label="%command.licman.label"
+               mnemonic="%command.licman.mnemonic">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.yonyou.uap.studio.lic.ui.startup.LicenseStateInitializer"></startup>
+   </extension>
+</plugin>

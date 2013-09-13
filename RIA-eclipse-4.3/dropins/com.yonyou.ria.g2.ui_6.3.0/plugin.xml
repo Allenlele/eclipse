@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="com.yonyou.ria.g2.ui.category"
+            name="RIA项目开发">
+      </category>
+      <wizard
+            category="com.yonyou.ria.g2.ui.category"
+            class="com.yonyou.ria.g2.ui.wizard.NewRIAProjectWizard"
+            id="com.yonyou.ria.g2.ui.wizard"
+            name="RIA Project"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            adaptable="true"
+            class="com.yonyou.ria.g2.ui.propertypage.RIAComponentPropertyPage"
+            id="com.yonyou.ria.g2.ui.page1"
+            name="RIA业务组件维护"
+            objectClass="org.eclipse.core.resources.IProject">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.yonyou.ria.g2.ui.objectContribution1"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               id="com.yonyou.ria.g2.ui.menu1"
+               label="RIA工具集">
+            <groupMarker
+                  name="g0">
+            </groupMarker>
+         </menu>
+         <action
+               class="com.yonyou.ria.g2.ui.action.UpdateClasspathAction"
+               id="com.yonyou.ria.g2.ui.action1"
+               label="更新RIA项目类路径"
+               menubarPath="com.yonyou.ria.g2.ui.menu1/g0">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="nc.uap.studio.common.propChangeListeners">
+      <listener
+            class="com.yonyou.ria.g2.ui.listener.UAPStudioPropChangeListener">
+      </listener>
+   </extension>
+
+</plugin>

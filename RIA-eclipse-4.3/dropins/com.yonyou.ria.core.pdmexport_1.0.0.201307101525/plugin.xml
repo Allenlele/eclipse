@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.yonyou.ria.core.pdmexport.contribution1"
+            nameFilter="*.pdm"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="com.yonyou.ria.core.pdmexport.popup.actions.ExportDBCreateScriptsAction"
+               enablesFor="1"
+               id="com.yonyou.ria.core.pdmexport.newAction"
+               label="pdm文件导出建库脚本"
+               menubarPath="additions"
+               tooltip="使用pdm文件导出建库脚本(包含db2、oracle及sqlserver)">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

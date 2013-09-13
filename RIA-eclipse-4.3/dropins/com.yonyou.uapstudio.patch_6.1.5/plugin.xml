@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            class="com.yonyou.uapstudio.patch.ui.UAPPatchExportWizard"
+            id="com.yonyou.uapstudio.patch.wizard1"
+            icon="icons/wizard-icon.png"
+            name="UAPx6补丁包">
+      </wizard>
+   </extension>
+
+</plugin>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.yonyou.ria.g2.update.objectContribution1"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="com.yonyou.ria.g2.update.ui.action.MDEUpdateRIAAction"
+               id="com.yonyou.ria.g2.update.action1"
+               label="MDE业务组件项目升级为RIA组件项目"
+               menubarPath="additions">
+         </action>
+         <visibility>
+            <and>
+               <objectState
+                     name="nature"
+                     value="nc.uap.mde.BizCompProjectNature">
+               </objectState>
+               <not>
+                  <objectState
+                        name="nature"
+                        value="com.yonyou.ria.g2.rianature">
+                  </objectState>
+               </not>
+            </and>
+         </visibility>
+      </objectContribution>
+   </extension>
+
+</plugin>
